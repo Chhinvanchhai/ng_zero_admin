@@ -1,0 +1,47 @@
+<div class="login-form-wrap">
+  <!-- Login form -->
+  <div class="content-layout">
+    <div class="head">
+      <img class="logo" style="width: 60px" alt="" src="logo.png" />
+      <span style="color: #dfbb71; font-size: 24px" class="title">Nagaworld Forms</span>
+    </div>
+  </div>
+  <form class="login-form" nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+    <nz-tabset [nzAnimated]="false">
+      <!-- Account and password login -->
+      <nz-tab nzTitle="Login">
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Username: admin">
+            <nz-input-group nzPrefixIcon="user" [nzSize]="'large'">
+              <!-- Input for username -->
+              <input type="text" formControlName="userName" nz-input placeholder="Username" [placeholder]="'Username: admin'" />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Password: a123456">
+            <nz-input-group nzPrefixIcon="lock" [nzSize]="'large'">
+              <!-- Input for password -->
+              <input type="password" autocomplete="on" formControlName="password" nz-input placeholder="Password" [placeholder]="'Password: a123456'" />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+      </nz-tab>
+    </nz-tabset>
+
+    <!-- Remember me and forgot password -->
+    <div class="login-form-margin" nz-row>
+      <div nz-col [nzSpan]="12">
+        <label formControlName="remember" nz-checkbox>
+          <span>Remember Me</span>
+        </label>
+      </div>
+      <div nz-col [nzSpan]="12">
+        <a class="login-form-forgot">Forgot Password</a>
+      </div>
+    </div>
+
+    <!-- Login button -->
+    <button class="login-form-button login-form-margin" nz-button nzSize="large" [nzType]="'primary'">Login</button>
+  </form>
+</div>
